@@ -9,7 +9,7 @@
   <a routerLink="product/{{ product.id }}">
     <img src="{{ product.url }}" alt="product" />
   </a>
-  <span>{{ product.price }}</span>
+  <span>${{ product.price }}</span>
   <input
     type="number"
     value="{{ quantity }}"

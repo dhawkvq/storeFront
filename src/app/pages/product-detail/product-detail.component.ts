@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { fakeProduct } from 'src/utils/fakeProduct';
-import { Product } from 'src/types/Product';
 import { ProductsService, ShoppingCartService } from 'src/app/services';
 import { IconOptions } from 'src/app/components/icon-button/icon-button.component';
 import { Classes } from 'src/types/Classes';
+import { Product } from 'src/types/Product';
+import { fakeProduct } from 'src/utils/fakeProduct';
 
 @Component({
   selector: 'app-product-detail',
@@ -14,13 +14,13 @@ import { Classes } from 'src/types/Classes';
 export class ProductDetailComponent implements OnInit {
   product: Product = fakeProduct;
 
-  quantity: number = 1;
-
   lightIcon = false;
 
   iconOption = IconOptions.ADD;
 
   currentClasses: Classes = {};
+
+  qauntity = 1;
 
   constructor(
     private route: ActivatedRoute,
@@ -35,18 +35,13 @@ export class ProductDetailComponent implements OnInit {
     }
   }
 
-  setQuantity(event: any) {
-    this.quantity = +event.target?.value ?? 1;
-  }
-
   addProductToCart() {
     this.updateClasses({ productAddedToCart: true });
     this.cartService.addItemToCart({
       ...this.product,
-      quantity: this.quantity,
+      quantity: this.qauntity,
     });
-
-    this.quantity = 1;
+    this.qauntity = 1;
   }
 
   updateClasses(classes: Classes = {}) {

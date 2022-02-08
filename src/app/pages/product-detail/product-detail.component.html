@@ -10,13 +10,8 @@
     <div class="right-container">
       <h2>{{ product.name }}</h2>
       <p>{{ product.description }}</p>
-      <input
-        type="number"
-        value="{{ quantity }}"
-        (change)="setQuantity($event)"
-        min="1"
-        max="10"
-      />
+      <span>${{ product.price }}</span>
+      <input type="number" [(ngModel)]="qauntity" min="1" max="10" />
       <app-icon-button
         class="add-button"
         [iconOption]="iconOption"
