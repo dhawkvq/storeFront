@@ -16,7 +16,7 @@ Storefront is a mock e-commerce website. This site displays multiple products, a
 
 <div style='border:1px solid green; width: 80%; margin: 10px auto;'></div>
 
-> You will need to install dependencies to allow for the applicatio to be served.
+> You will need to install dependencies to allow for the application to be served.
 
 **Install dependencies**
 

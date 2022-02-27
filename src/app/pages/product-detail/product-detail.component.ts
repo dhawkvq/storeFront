@@ -20,7 +20,7 @@ export class ProductDetailComponent implements OnInit {
 
   currentClasses: Classes = {};
 
-  qauntity = 1;
+  quantity = 1;
 
   constructor(
     private route: ActivatedRoute,
@@ -39,9 +39,9 @@ export class ProductDetailComponent implements OnInit {
     this.updateClasses({ productAddedToCart: true });
     this.cartService.addItemToCart({
       ...this.product,
-      quantity: this.qauntity,
+      quantity: this.quantity,
     });
-    this.qauntity = 1;
+    this.quantity = 1;
   }
 
   updateClasses(classes: Classes = {}) {
